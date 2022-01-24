@@ -22,7 +22,7 @@ VERSION:
 clean-local:
 	@rm -rf VERSION cov-int mosh-coverity.txz
 
-cppcheck: $(BUILT_SOURCES)
+cppcheck: $(BUILT_SOURCES) config.h
 	cppcheck --enable=all --template=gcc -include src/include/config.h -I src/include \
 		-I src/crypto -I src/frontend -I src/network -I src/protobufs \
 		-I src/statesync -I src/terminal -I src/util \
